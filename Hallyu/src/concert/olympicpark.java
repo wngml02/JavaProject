@@ -15,14 +15,15 @@ public class olympicpark implements concerthall {
 		System.out.println("1)음식점 2)카페 선택해주세요.");
 	} //secondQuiz 추상메소드의 실체 메소드
 	public void setWhere() {
+		cafeORrest CR = new cafeORrest();
 		Scanner sc = new Scanner(System.in);
 		int where = sc.nextInt();
 		if (where == 1) {
 			restaurant restlist = new restaurant();
-			restlist.view();
+			CR.device(restlist);
 		} else {
 			cafe cafelist = new cafe();
-			cafelist.view();
+			CR.device(cafelist);
 		}
 	}
 }
