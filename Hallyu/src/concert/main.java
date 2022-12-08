@@ -5,14 +5,28 @@ public class main {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("어디 공연장을 가시나요?");
-		//for(hallLocation hl : hallLocation.values()) {
-			//System.out.println(h1);
-		//}\
+		Goto Goto = new Goto();
+		System.out.println("어떤 이동수단을 이용하나요?");
+		System.out.println("Car/Bus/Subway");
+		String trans = scanner.next();
+		switch(trans) {
+		case "Car", "car": Car car = new Car();
+			Goto.go(car);
+			break;
+		case "Bus","bus": Bus bus = new Bus();
+			Goto.go(bus);
+			break;
+		case "Subway","subway": Subway subway = new Subway();
+			Goto.go(subway);
+			break;
+		}
 		
+		System.out.println("어디 공연장을 가시나요?");
 		
 		System.out.println("1)올림픽공원 2)고척스카이돔 3)잠실종합운동장 4)수원월드컵경기장 5)상암월드컵경기장");
 		int hall = scanner.nextInt(); //사용자에게 공연장 입력받기
+		
+		
 		
 		concerthall ch = null;
 		switch(hall) {
@@ -28,5 +42,8 @@ public class main {
 		ch.moveAny();
 		ch.secondQuiz();
 		ch.setWhere();
+		
+		scanner.close();
 	}
+	
 }
