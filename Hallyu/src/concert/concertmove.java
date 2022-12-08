@@ -5,9 +5,7 @@ public class concertmove {
 	
 	ch.secondQuiz();
 	ch.moveAny();*/
-	public void setAdvice() {
-	}
-	public void view() {
+	public void ReadCsv() {
 		System.out.println("csv ¹Þ±â");
 	}
 }

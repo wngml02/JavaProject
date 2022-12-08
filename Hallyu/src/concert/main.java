@@ -8,7 +8,9 @@ public class main {
 		System.out.println("어디 공연장을 가시나요?");
 		//for(hallLocation hl : hallLocation.values()) {
 			//System.out.println(h1);
-		//}
+		//}\
+		
+		
 		System.out.println("1)올림픽공원 2)고척스카이돔 3)잠실종합운동장 4)수원월드컵경기장 5)상암월드컵경기장");
 		int hall = scanner.nextInt(); //사용자에게 공연장 입력받기
 		
