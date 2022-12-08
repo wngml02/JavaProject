@@ -1,5 +1,6 @@
 package concert;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class jamsil implements concerthall{
@@ -18,11 +19,15 @@ public class jamsil implements concerthall{
 		Scanner sc = new Scanner(System.in);
 		int where = sc.nextInt();
 		if (where == 1) {
-			restaurant restlist = new restaurant();
-			restlist.view();
+			List<List<String>> list = ReadCsv.readCSVFile("src/csvfile/jsfile.csv");
+		    for (List<String> line : list) {
+		      System.out.println(String.join("||", line));
+		    }
 		} else {
-			cafe cafelist = new cafe();
-			cafelist.view();
+			List<List<String>> list = ReadCsv.readCSVFile("src/csvfile/jscafe.csv");
+		    for (List<String> line : list) {
+		      System.out.println(String.join("||", line));
+		    }
 		}
-	}
+	 }
 }
