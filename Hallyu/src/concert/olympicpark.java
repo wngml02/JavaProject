@@ -1,16 +1,8 @@
 package concert;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
-
-import concert.restaurant.ReadCsv;
 
 public class olympicpark implements concerthall {
 
@@ -25,18 +17,19 @@ public class olympicpark implements concerthall {
 		System.out.println("1)음식점 2)카페 선택해주세요.");
 	} //secondQuiz 추상메소드의 실체 메소드
 	public void setWhere() {
-		cafeORrest CR = new cafeORrest();
 		Scanner sc = new Scanner(System.in);
 		int where = sc.nextInt();
 		if (where == 1) {
-			String filePath = "./oplist.csv";
-		    List<List<String>> parsed = ReadCsv.parse(filePath);
-		    for (List<String> line : parsed) {
-		      System.out.println(String.join(",", line));
+			List<List<String>> list = ReadCsv.readCSVFile("src/csvfile/oplist.csv");
+		    for (List<String> line : list) {
+		      System.out.println(String.join("||", line));
 		    }
 		} else {
-			cafe cafelist = new cafe();
-			CR.device(cafelist);
+			List<List<String>> list = ReadCsv.readCSVFile("src/csvfile/opcafe.csv");
+		    for (List<String> line : list) {
+		      System.out.println(String.join("||", line));
+		    }
 		}
 	}
+	
 }
