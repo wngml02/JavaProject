@@ -2,7 +2,7 @@ package concert;
 
 public interface concerthall {
 	int where = 0;
-	//식당과 카페 중 선택
+	//상수
 	
 	void moveAny();
 	void secondQuiz();
